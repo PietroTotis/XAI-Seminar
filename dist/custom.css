@@ -1,0 +1,243 @@
+.example {
+    border-radius: 25px;
+    background-color: rgba(135, 192, 189, 0.7);
+    padding: 20px;
+    font-size: xx-large;
+    text-align: center;
+    margin: 10px;
+}
+
+.def {
+    border-radius: 25px;
+    background-color: rgba(29, 141, 176, 0.5);
+    padding: 20px;
+    font-size: xx-large;
+    text-align: left;
+    margin: 10px;
+}
+
+.fragmented-line {
+    display: flex;
+    /* flex-direction: column;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.ltext {
+    text-align: left;
+}
+
+.rounded-box {
+    border-style: solid;
+    border-radius: 25px;
+    border-color: #002b36;
+    padding: 20px;
+    text-align: center;
+    border-width: 3px;
+    padding: 5px 10px 5px 10px;
+    margin-right: 10px;
+}
+
+.sharp-box {
+    border-style: solid;
+    border-width: 3px;
+    padding: 5px 10px 5px 10px;
+    border-color: #002b36;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#nolines tbody tr td {
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.arrow {
+    width: 150px;
+}
+
+.line {
+    margin-top: 14px;
+    width: 120px;
+    background: #1d8db0;
+    height: 10px;
+    float: left;
+}
+
+.arrow3 {
+    width: 350px;
+}
+
+.line3 {
+    margin-top: 14px;
+    width: 350px;
+    background: #1d8db0;
+    height: 10px;
+    float: left;
+}
+
+.point {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid #1d8db0;
+    float: right;
+}
+
+.trapezoid {
+    width: 100%;
+    height: 175px;
+    background-image: url("../img/funnel.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#expressivity {
+    width: 200px;
+    padding-left: 34px;
+    font-size: 0.5em;
+    vertical-align: middle;
+    display: table-cell;
+    color: white;
+}
+
+
+.line2 {
+    /* margin-top: 14px; */
+    width: 100%;
+    background: #1d8db0;
+    height: 30px;
+    /* float: center; */
+}
+
+.conf {
+    margin-bottom: 10px;
+}
+
+#nolines .conf tbody .slots td {
+    text-align: bototm;
+    vertical-align: middle;
+    border: solid;
+    border-top: none;
+}
+
+#nolines .conf tbody .positions {
+    font-size: 1em;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+}
+
+.circle {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    align-items: center;
+
+}
+
+#date {
+    margin: 0px;
+}
+
+.footer img {
+    width: 130px;
+    height: auto;
+}
+
+.triangle1 {
+    width: 0;
+    height: 0;
+    border: solid 150px;
+    border-top: 0px;
+    border-color: transparent transparent #1d8db0 transparent;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
+
+.triangle2 {
+    width: 0;
+    height: 0;
+    border: solid 160px;
+    border-top: 0px;
+    border-color: transparent transparent #1d8db0 transparent;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
+.container {
+    height: 100%;
+    position: relative;
+}
+
+#frame1 {
+    position: absolute;
+    left: 45.5%;
+    top: 15%;
+    z-index: 1000;
+    border: solid 3px;
+    height: 10px;
+    width: 7%;
+    border-color: rgba(135, 192, 189, 1);
+}
+
+#frame2 {
+    position: absolute;
+    left: 45.5%;
+    top: 24%;
+    z-index: 1000;
+    border: solid 3px;
+    height: 30px;
+    width: 7%;
+    border-color: rgba(135, 192, 189, 1);
+}
+
+#frame3 {
+    position: absolute;
+    left: 40%;
+    top: 24%;
+    z-index: 1000;
+    border: solid 3px;
+    height: 60px;
+    width: 5%;
+    border-color: rgba(135, 192, 189, 1);
+}
+
+#frame4 {
+    position: absolute;
+    left: 45.5%;
+    top: 14%;
+    z-index: 1000;
+    border: solid 3px;
+    height: 45px;
+    width: 7%;
+    border-color: rgba(135, 192, 189, 1);
+}
+
+#frame5 {
+    position: absolute;
+    left: 53%;
+    top: 14%;
+    z-index: 1000;
+    border: solid 3px;
+    height: 75px;
+    width: 6%;
+    border-color: rgba(135, 192, 189, 1);
+}
