@@ -19,6 +19,7 @@
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	<script src="plugin/simplemenu/simplemenu.js"></script>
+	<script src="plugin/reveald3.js"></script>
 	<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
 </head>
 
@@ -28,13 +29,61 @@
 			<ul class="menu"></ul>
 		</div>
 		<div class="slides">
+			<section></section>
+			<section data-auto-animate data-external="Slides/0-Intro.html" data-background-image="img/map2.png"
+				data-background-position="right" data-background-size="contain">
+			</section>
 			<section data-auto-animate data-external="Slides/1-title.html">
 			</section>
 			<section data-name="Problem">
-				<section data-auto-animate data-external="Slides/2-Argumentation.html">
+				<section data-external="Slides/2-Argumentation.html">
 				</section>
-				<section data-auto-animate data-external="Slides/3-PArgumentation.html">
+				<section data-external="Slides/3-PArgumentation.html">
 				</section>
+				<section data-external="Slides/4-Approaches.html">
+				</section>
+				<!-- <section data-auto-animate data-external="Slides/4.1-Constellations.html">
+				</section>
+				<section data-auto-animate data-external="Slides/4.2-Epistemic.html">
+				</section> -->
+				<section data-auto-animate data-external="Slides/5-Nilsson.html">
+				</section>
+				<!-- <section data-auto-animate data-external="Slides/5.1-Nilsson2.html">
+				</section> -->
+				<section data-auto-animate data-external="Slides/6-Pearl.html">
+				</section>
+				<section data-auto-animate data-external="Slides/7-Problem.html">
+				</section>
+			</section>
+			<section data-name="Args to PLP">
+				<section data-external="Slides/8-PLP.html">
+				</section>
+				<section data-auto-animate data-external="Slides/9-PLP2.html">
+				</section>
+				<section data-auto-animate data-external="Slides/10-IE.html">
+				</section>
+				<section data-external="Slides/11-Map.html">
+				</section>
+				<section data-auto-animate data-external="Slides/12-Map_Bias.html">
+				</section>
+				<section data-auto-animate data-external="Slides/13-Map_Att.html">
+				</section>
+				<section data-auto-animate data-external="Slides/14-More.html">
+				</section>
+			</section>
+			<section data-name="The joint">
+				<section data-auto-animate data-external="Slides/15-Joint.html">
+				</section>
+				<section data-auto-animate data-external="Slides/15.1-Joint2.html">
+				</section>
+				<section data-auto-animate data-external="Slides/15.2-Joint3.html">
+				</section>
+				<section data-auto-animate data-external="Slides/15.3-Joint4.html">
+				</section>
+			</section>
+			<section data-name="PLP tools">
+			</section>
+			<section data-name="smProbLog">
 			</section>
 		</div>
 	</div>
@@ -55,15 +104,39 @@
 			simplemenu: {
 				auto: true
 			},
-			plugins: [Simplemenu, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3],
+			plugins: [Simplemenu, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, Reveald3],
 			dependencies: [{
 				src: 'plugin/external/external.js',
 				condition: function () {
 					return !!document.querySelector('[data-external],[data-external-replace]');
 				}
-			}
-			]
-		});
+			}],
+			highlight: {
+				beforeHighlight: hljs => hljs.registerLanguage("ampl", function (hljs) {
+					return {
+						keywords: {
+							keyword: 'not query evidence'
+						},
+						contains: [
+							{
+								className: 'type',
+								begin: '_po',
+								end: 's'
+							},
+							{
+								className: 'type',
+								begin: '_ne',
+								end: 'g'
+							},
+							{
+								className: 'symbol',
+								begin: /:-|::|¬/
+							},
+						]
+					};
+				})
+			},
+		})
 	</script>
 </body>
 

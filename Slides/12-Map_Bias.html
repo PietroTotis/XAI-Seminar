@@ -1,0 +1,17 @@
+<h2>Bias</h2>
+<img src="img/pargs.svg">
+
+<div style="font-size: 0.7em">
+    Probabilities $P_A$ map to probabilistic facts: they define the independent bias towards accepting an argument
+    without considering the others
+
+    <pre class="ampl">
+    <code style="grid-area:right;" data-trim data-noescape>
+0.6::bias(a1).
+0.8::bias(a2).
+0.4::bias(a3).
+0.2::bias(a4).
+arg(A) :- bias(A).
+    </code>
+</pre>
+</div>

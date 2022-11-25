@@ -1,0 +1,15 @@
+<h2>Attacks</h2>
+<img src="img/pargs.svg">
+
+<div style="font-size: 0.7em">
+    Probabilities $P_R$ map to inhibition rules: they define the probability that believing in the attacker inhibits the
+    belief in the target.
+    <pre class="ampl">
+    <code data-trim data-noescape>
+0.4:: ¬arg(a1) :- arg(a2).
+0.7:: ¬arg(a2) :- arg(a1).
+0.9:: ¬arg(a1) :- arg(a3).
+0.8:: ¬arg(a2) :- arg(a4).
+    </code>
+</pre>
+</div>

@@ -1,0 +1,35 @@
+<h2>PLP extras</h2>
+<div style="font-size:0.8em">
+    Useful syntax tricks to write better models:
+    <ul>
+        <li class="fragment">
+            Annotated rules: express a probability that a logical rule holds.
+            <div style="display: grid; grid-template-areas:'left right'">
+                <pre class="ampl">
+                <code style="grid-area:left;" data-trim data-noescape>
+0.8::umbrella :- rain, not wind.
+</code></pre>
+                <pre class="ampl"><code style="grid-area:right;" data-trim data-noescape>
+0.8 :: remember.
+umbrella :- remember, rain, not wind.
+    </code></pre>
+            </div>
+        </li>
+        <li class="fragment">
+            Negation in the head: express the <em>inhibition effect</em> on a logical atom.
+            <div style="display: grid; grid-template-areas:'left right'">
+                <pre class="ampl">
+                <code style="grid-area:left;width:fit-content" data-trim data-noescape>
+0.3::friend_brings_umbrella.
+¬umbrella :- friend_brings_umbrella.
+</code></pre>
+                <pre class="ampl"><code style="grid-area:right;width:fit-content" data-trim data-noescape>
+0.3::friend_brings_umbrella.
+umbrella :- umbrella_pos, umbrella_neg.
+umbrella_pos :- remember, rain, not wind.
+umbrella_neg :- friend_brings_umbrella.
+    </code></pre>
+            </div>
+        </li>
+    </ul>
+</div>

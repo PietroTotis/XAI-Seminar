@@ -1,0 +1,53 @@
+<h2>Joint probability distribution</h2>
+
+<div style="display:flex">
+    <div style="font-size:0.68em;height:100">
+        <pre class=" ampl">
+        <code style="width:fit-content;" data-id="code-animation">
+0.6::bias(hotel_X).
+0.8::bias(hotel_Y).
+0.4::bias(expensive).
+0.2::bias(noise).
+0.4::bias(anne).
+
+
+
+arg(X) :- bias(X).
+
+0.7::\+arg(hotel_Y) :- arg(hotel_X).
+0.4::\+arg(hotel_X) :- arg(hotel_Y).
+0.8::\+arg(hotel_Y) :- arg(noise).
+0.9::\+arg(hotel_X) :- arg(expensive).
+
+arg(hotel_Y) :- arg(anne).
+                                            
+
+query(arg(X)).
+    </code>
+        </pre>
+    </div>
+    <div data-id="text"
+        style="margin-left:30px; margin-top:30px; font-size:0.7em; display:flex; flex-direction: column; align-items:flex-end;">
+        <span>hotel_X:</span>
+        <span>hotel_Y:</span>
+        <span>noise:</span>
+        <span>expensive:</span>
+    </div>
+    <div style="margin-left:15px; margin-top:30px; font-size:0.7em; display:flex; flex-direction: column;">
+        <div style="display: flex;align-items: center;">
+            <div data-id="box1" class="prob_bar" style="width:120px;">
+            </div>0.32
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div data-id="box2" class="prob_bar" style="width:220px;"></div>0.58
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div data-id="box3" class="prob_bar" style="width:75px;">
+            </div>0.2
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div data-id="box4" class="prob_bar" style="width:150px;"></div>0.4
+        </div>
+
+    </div>
+</div>

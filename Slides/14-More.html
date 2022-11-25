@@ -1,0 +1,33 @@
+<h2>Beyond classical AAFs</h2>
+
+<div style="font-size: 0.5em;">
+    We exploit the flexibility of PLP to expand our framework with other argumentative
+    features.
+</div>
+<div class="r-stack">
+    <img class=" fragment fade-out" data-fragment-index="1" src="img/pargs.svg">
+    <img class="fragment current-visible" data-fragment-index="1" src="img/more.svg">
+    <img class="fragment current-visible" data-fragment-index="2" src="img/more2.svg">
+</div>
+
+<div style="font-size: 0.6em;">
+    <ul>
+        <li class="fragment" data-fragment-index="1">
+            Supports: regular heads correspond to increases in the belief in the head of the rule.
+            <pre class="ampl">
+        <code data-trim data-noescape>
+0.5:: arg(a2) :- arg(a5).
+        </code>
+    </pre>
+        </li>
+        <li class="fragment" data-fragment-index="2">
+            n-ary relations: more arguments in the body to express joint attacks/supports
+            <pre class="ampl">
+            <code data-trim data-noescape>
+0.2:: ¬arg(a4) :- arg(a6), arg(a7).
+            </code>
+        </pre>
+        </li>
+    </ul>
+
+</div>

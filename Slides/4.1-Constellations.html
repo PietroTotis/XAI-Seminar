@@ -1,0 +1,44 @@
+<h2>Constellations</h2>
+
+<div style="font-size:0.6em">
+    Constellations approach: probabilities express uncertainty over the <em>structure</em> of the graph.
+    <ul>
+        <li class="fragment">
+            Possible worlds = all subgraphs induced by (independent) choices.
+            <div style="text-align: center" ;>
+                <img src="img/const.svg">
+            </div>
+
+        </li>
+        <li class="fragment">
+            But some worlds/subgraphs include an attack but not the attacker<sup>1</sup>.
+        </li>
+        <li class="fragment">
+            Probability of an argument = probability of being accepted w.r.t. a classical extension.
+            <div style="display:flex; align-items: center;justify-content: center; margin-bottom:-30px">
+                <img src="img/single_const.svg">
+                <div style="margin-left:20px">
+                    <div style="text-align: left;">$P(\omega) =
+                        \prod_{a\in
+                        \omega} P(a)\cdot \prod_{a\not\in \omega}1-P(a) $
+                    </div>
+                    <div style="text-align: left;"> $P(arg) =
+                        \sum_{arg\in
+                        ext(\omega)} P(\omega)$
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+<hr>
+<div style="font-size: 0.4em;">
+    <ol>
+        <li>
+            T.Mantadelis, S.Bistarelli, "Probabilistic abstract argumentation frameworks, a possible
+            world view",
+            International Journal of Approximate Reasoning 2020.
+        </li>
+    </ol>
+</div>
