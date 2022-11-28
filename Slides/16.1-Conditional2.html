@@ -3,7 +3,8 @@
 <div style="display:flex">
     <div style="font-size:0.68em;height:100%">
         <pre class="ampl">
-    <code style="width:fit-content;" data-id="code-animation">
+    <code style="width:fit-content;" data-id="code-animation" data-trim data-noescape
+    data-line-numbers="20">
 0.6::bias(hotel_X).
 0.8::bias(hotel_Y).
 0.4::bias(expensive).
@@ -19,11 +20,11 @@ arg(X) :- bias(X).
 0.8::\+arg(hotel_Y) :- arg(noise).
 0.9::\+arg(hotel_X) :- arg(expensive).
 
-arg(hotel_Y) :- arg(anne).
+0.5::arg(hotel_Y) :- arg(anne).
 0.7::\+arg(noise) :- arg(week), arg(quiet). 
 
-evidence(expensive, false).
-evidence(noise).
+evidence(arg(expensive), false).
+evidence(arg(noise), true).
 query(arg(X)).
     </code>
 </pre>
@@ -34,25 +35,40 @@ query(arg(X)).
         <span>hotel_Y:</span>
         <span>expensive:</span>
         <span>noise:</span>
+        <span>week:</span>
+        <span>quiet:</span>
     </div>
     <div style="margin-left:15px; margin-top:30px; font-size:0.7em; display:flex; flex-direction: column;">
         <div style="display: flex;align-items: center;">
             <div data-id="box1" class="prob_bar" style="width:218px;">
-            </div>0.58
+            </div>
+            <span data-id="txt1">0.58</span>
         </div>
         <div style="display: flex;align-items: center;">
-            <div data-id="box2" class="prob_bar" style="width:45px;"></div>0.12
+            <div data-id="box2" class="prob_bar" style="width:45px;"></div>
+            <span data-id="txt2">0.12</span>
         </div>
         <div style="display: flex;align-items: center;">
-            <div data-id="box4" class="prob_bar" style="width:1px;"></div>0
+            <div data-id="box4" class="prob_bar" style="width:1px;"></div>
+            <span data-id="txt4">0</span>
         </div>
         <div style="display: flex;align-items: center;">
             <div data-id="box3" class="prob_bar" style="width:375px;">
-            </div>1
+            </div>
+            <span data-id="txt3">1</span>
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div data-id="box5" class="prob_bar" style="width:105px;"></div>
+            <span data-id="txt5">0.28</span>
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div data-id="box6" class="prob_bar" style="width:195px;">
+            </div>
+            <span data-id="txt6">0.52</span>
         </div>
 
     </div>
 </div>
-<div style="font-size:0.8em">
+<div data-id="cap" style="font-size:0.8em">
     <em>Evidence</em> corresponds to the joint belief distribution conditioned to the new information
 </div>

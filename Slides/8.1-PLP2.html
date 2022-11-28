@@ -1,0 +1,117 @@
+<h2>Probabilistic Logic Programming</h2>
+<!-- <div class="def" style="font-size:0.5em">
+    <span class="fragment" data-fragment-index="1">
+        Probabilistic logic programs annotate a set of facts $F$ with <em>mutually independent</em> probabilities.
+        The rules $R$ define the logical relations of the literals.<br>
+    </span>
+    <span>
+        We obtain a distribution over logic programs, <em>possible worlds</em>, where a subset of $F$ is chosen
+    </span>
+
+    <span class="fragment" data-fragment-index="4">
+        The probability of a literal is the sum of the probability of the possible worlds where the literal is true.
+    </span>
+</div> -->
+
+<div style="display:flex; justify-content: center;">
+    <div style="grid-area:code;">
+        <pre class="ampl">
+    <code style="font-size:0.5em;width:fit-content" data-trim data-noescape  data-id="code-animation0">
+0.4::rain.
+0.7::wind.
+umbrella :- rain, 
+            not wind.
+scarf :- rain.
+scarf :- wind.
+query(umbrella).
+</code></pre>
+    </div>
+    <div style="display:flex; flex-direction: column;margin-left:20px;justify-content: center;align-items:baseline;">
+        <div style="font-size:0.7em" data-id="txt">Annotate logical facts with (independent) probabilities.</div>
+        <div class="fragment" style="font-size:0.5em;" data-fragment-index="6">
+            $P(umbrella) = 0.12$
+        </div>
+        <div class="fragment" style="font-size:0.5em;" data-fragment-index="7">
+            $P(\mathit{scarf}) = 0.12+0.42+0.28=0.82$
+        </div>
+        <div class="fragment" style="font-size:0.5em;" data-fragment-index="8">
+            <pre class="ampl">
+                <code data-trim data-noescape>
+evidence(scarf)
+query(rain)
+        </code></pre>
+            $P(\mathit{rain}\,|\mathit{scarf}) = \frac{0.4}{0.82}=0.488$
+        </div>
+    </div>
+</div>
+<table>
+    <tr style="font-size:0.5em;">
+        <td style=" text-align: center; vertical-align: middle;font-size:0.8em">Possible world</td>
+        <td style=" text-align: center;vertical-align: bottom;">
+            <pre class="ampl">
+            <code style="width:fit-content" data-trim data-noescape  data-id="code-animation1">
+umbrella :- rain, 
+            not wind.
+scarf :- rain.
+scarf :- wind.
+query(umbrella).
+            </code>
+            </pre>
+        </td>
+        <td style=" text-align: center;vertical-align: bottom;">
+            <pre class="ampl">
+    <code style="width:fit-content" data-trim data-noescape  data-id="code-animation2">
+rain.
+umbrella :- rain, 
+            not wind.
+scarf :- rain.
+scarf :- wind.
+query(umbrella).
+</code>
+</pre>
+        </td>
+        <td style=" text-align: center;vertical-align: bottom;">
+            <pre class="ampl">
+    <code style="width:fit-content" data-trim data-noescape  data-id="code-animation3">
+wind.
+umbrella :- rain, 
+            not wind.
+scarf :- rain.
+scarf :- wind.
+query(umbrella).
+</code></pre>
+        </td>
+        <td style=" text-align: center;vertical-align: bottom;">
+            <pre class="ampl">
+    <code style="width:fit-content" data-trim data-noescape  data-id="code-animation4">
+rain.
+wind.
+umbrella :- rain, 
+            not wind.
+scarf :- rain.
+scarf :- wind.
+query(umbrella).
+</code></pre>
+        </td>
+    </tr>
+    <tr style="font-size:0.45em" class="fragment" data-fragment-index="4">
+        <td style=" text-align: center;">Probability</td>
+        <td style=" text-align: center;">$0.18=0.6\cdot 0.3$</td>
+        <td style=" text-align: center;">
+            <p class="fragment highlight-red" data-fragment-index="6">$0.12=0.4\cdot 0.3$</p>
+        </td>
+        <td style=" text-align: center;">
+            <p class="fragment highlight-red" data-fragment-index="7">$0.42=0.6\cdot 0.7$</p>
+        </td>
+        <td style=" text-align: center;">
+            <p class="fragment highlight-red" data-fragment-index="7">$0.28=0.4\cdot 0.7$</p>
+        </td>
+    </tr>
+    <tr style="font-size:0.4em" class="fragment" data-fragment-index="5">
+        <td style=" text-align: center;">Model</td>
+        <td style=" text-align: center;">$\{\}$</td>
+        <td style=" text-align: center;">$\{rain, \mathit{scarf}, umbrella\}$</td>
+        <td style=" text-align: center;">$\{wind, \mathit{scarf}\}$</td>
+        <td style=" text-align: center;">$\{rain, wind, \mathit{scarf}\}$</td>
+    </tr>
+</table>

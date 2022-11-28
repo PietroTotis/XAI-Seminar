@@ -3,7 +3,8 @@
 <div style="display:flex">
     <div style="font-size:0.68em;height:100%">
         <pre class="ampl">
-    <code style="width:fit-content;" data-id="code-animation">
+    <code style="width:fit-content;" data-id="code-animation" data-trim data-noescape
+    data-line-numbers="11-14">
 0.6::bias(hotel_X).
 0.8::bias(hotel_Y).
 0.4::bias(expensive).
@@ -38,17 +39,20 @@ query(arg(X)).
     <div style="margin-left:15px; margin-top:30px; font-size:0.7em; display:flex; flex-direction: column;">
         <div style="display: flex;align-items: center;">
             <div data-id="box1" class="prob_bar" style="width:120px;">
-            </div>0.32
+            </div>
+            <span data-id="txt1">0.32</span>
         </div>
         <div style="display: flex;align-items: center;">
-            <div data-id="box2" class="prob_bar" style="width:199px;"></div>0.53
+            <div data-id="box2" class="prob_bar" style="width:199px;"></div>
+            <span data-id="txt2">0.53</span>
         </div>
         <div style="display: flex;align-items: center;">
-            <div data-id="box4" class="prob_bar" style="width:150px;"></div>0.4
+            <div data-id="box4" class="prob_bar" style="width:150px;"></div>
+            <span data-id="txt4">0.4</span>
         </div>
         <div style="display: flex;align-items: center;">
             <div data-id="box3" class="prob_bar" style="width:75px;">
-            </div>0.2
+            </div><span data-id="txt3">0.2</span>
         </div>
 
     </div>

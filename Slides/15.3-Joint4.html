@@ -3,7 +3,8 @@
 <div style="display:flex">
     <div style="font-size:0.68em;height:100%">
         <pre class="ampl">
-    <code style="width:fit-content;" data-id="code-animation">
+    <code style="width:fit-content;" data-id="code-animation" data-trim data-noescape
+    data-line-numbers="6,7,17">
 0.6::bias(hotel_X).
 0.8::bias(hotel_Y).
 0.4::bias(expensive).
@@ -19,7 +20,7 @@ arg(X) :- bias(X).
 0.8::\+arg(hotel_Y) :- arg(noise).
 0.9::\+arg(hotel_X) :- arg(expensive).
 
-arg(hotel_Y) :- arg(anne).
+0.5::arg(hotel_Y) :- arg(anne).
 0.7::\+arg(noise) :- arg(week), arg(quiet). 
 
 
@@ -34,21 +35,35 @@ query(arg(X)).
         <span>hotel_Y:</span>
         <span>expensive:</span>
         <span>noise:</span>
+        <span>week:</span>
+        <span>quiet:</span>
     </div>
     <div style="margin-left:15px; margin-top:30px; font-size:0.7em; display:flex; flex-direction: column;">
         <div style="display: flex;align-items: center;">
             <div data-id="box1" class="prob_bar" style="width:114px;">
-            </div>0.308
+            </div>
+            <span data-id="txt1">0.308</span>
         </div>
         <div style="display: flex;align-items: center;">
-            <div data-id="box2" class="prob_bar" style="width:230px;"></div>0.60
+            <div data-id="box2" class="prob_bar" style="width:230px;"></div>
+            <span data-id="txt2">0.60</span>
         </div>
         <div style="display: flex;align-items: center;">
-            <div data-id="box4" class="prob_bar" style="width:150px;"></div>0.4
+            <div data-id="box4" class="prob_bar" style="width:150px;"></div>
+            <span data-id="txt4">0.4</span>
         </div>
         <div style="display: flex;align-items: center;">
             <div data-id="box3" class="prob_bar" style="width:60px;">
-            </div>0.16
+            </div><span data-id="txt3">0.16</span>
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div data-id="box5" class="prob_bar" style="width:150px;"></div>
+            <span data-id="txt5">0.4</span>
+        </div>
+        <div style="display: flex;align-items: center;">
+            <div data-id="box6" class="prob_bar" style="width:225px;">
+            </div>
+            <span data-id="txt6">0.6</span>
         </div>
     </div>
 </div>

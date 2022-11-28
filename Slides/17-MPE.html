@@ -1,0 +1,48 @@
+<h2>PLP tools: MPE </h2>
+
+<div class="def" style="font-size:0.6em">
+    The Most Probable Explanation (MPE) query is a typical PLP task where the goal is to compute the most probable
+    possible world compatible with the given evidence.
+</div>
+
+<div style="font-size:0.5em">
+    $MPE(arg(hotel\_X)): \omega = \{bias(quiet),\allowbreak \lnot bias(week),\allowbreak bias(hotel\_X),\allowbreak
+    \lnot
+    bias(anne),\allowbreak \lnot bias(noise),\allowbreak
+    bias(hotel\_Y),\allowbreak \lnot bias(exp), \allowbreak att_1,\allowbreak \lnot att_2, \allowbreak
+    att_3,\allowbreak att_4,\allowbreak att_5, att_6\}$
+</div>
+<div style="font-size:0.7em" class="fragment">
+
+    <div style="display:flex">
+        <div style="font-size:0.68em;height:100%; padding-right:20px">
+            <pre class=" ampl">
+            <code style="width:fit-content;" data-id="code-animation">
+    0.6::bias(hotel_X).
+    0.8::bias(hotel_Y).
+    0.4::bias(expensive).
+    0.2::bias(noise).
+    0.4::bias(anne).
+    0.4::bias(week).
+    0.6::bias(quiet).
+    
+    arg(X) :- bias(X).
+    
+    0.7::\+arg(hotel_Y) :- arg(hotel_X).
+    0.4::\+arg(hotel_X) :- arg(hotel_Y).
+    0.8::\+arg(hotel_Y) :- arg(noise).
+    0.9::\+arg(hotel_X) :- arg(expensive).
+    
+    0.5::arg(hotel_Y) :- arg(anne).
+    0.7::\+arg(noise) :- arg(week), arg(quiet). 
+    
+    evidence(arg(hotel_Y)).
+    query(arg(X)).
+        </code>
+            </pre>
+        </div>
+        <div style="display:flex; flex-direction: column;">
+            <img src="img/mpe_x.svg" style="width:90%">
+            <span style="font-size:0.7em; margin-top:-30px">$$P(\omega)= 0.00523$$</span>
+        </div>
+    </div>
