@@ -1,1 +1,43 @@
-<h2>smproblog</h2>
+<h2>(sm)problog</h2>
+
+<div style="display:flex; font-size:0.7em">
+    <div style="display:flex; flex-direction: column;">
+        <div class="fragment example" data-fragment-index="1">
+            Grounding
+        </div>
+        <span class="fragment" data-fragment-index="1"> ↓ </span>
+        <div class="fragment example" data-fragment-index="2">
+            Cycle breaking
+        </div>
+        <span class="fragment" data-fragment-index="2"> ↓ </span>
+        <div class="fragment example" data-fragment-index="3">
+            CNF
+        </div>
+        <span class="fragment" data-fragment-index="3"> ↓ </span>
+        <div class="fragment example" data-fragment-index="4">
+            Knowledge Compilation
+        </div>
+        <span class="fragment" data-fragment-index="4"> ↓ </span>
+        <div class="fragment example" data-fragment-index="5">
+            WMC
+        </div>
+    </div>
+    <div style="margin-left:2%">
+        <pre class="ampl fragment" style="width: fit-content;" data-fragment-index="1">
+            <code data-trim data-noescap>
+0.28::alarm.
+0.5::neighbour_at_home.
+neighbour calls :- alarm, neighbour_at_home.
+</code></pre>
+        <div class="r-stack">
+            <pre class="fragment ampl fade-in-then-out" data-fragment-index="3">
+    <code data-trim data-noescap>
+p cnf 3 2
+1 -3 0
+2 3 -1 0
+...
+</code></pre>
+            <img class="fragment fade-in-then-out" data-fragment-index="4" src="img/burglary.svg" height="400">
+            <img class=" fragment current-visible" data-fragment-index="5" src="img/burglary_arith.svg" height="400">
+        </div>
+    </div>

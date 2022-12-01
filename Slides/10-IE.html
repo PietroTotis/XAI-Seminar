@@ -2,29 +2,34 @@
 <div style="font-size:0.8em">
     <div data-id="def">Negation in the head: express the <em>inhibition effect</em> on a logical atom.</div>
     <div style="display:flex; justify-content:center">
-        <div>
+        <div style="width:55%">
             <pre class="ampl">
                 <code  data-trim data-noescap>
 0.3::friend_brings_umbrella.
 ¬umbrella :- friend_brings_umbrella.
 </code></pre>
             <span> ↓ </span>
-            <pre class="ampl"><code style="width:fit-content" data-trim data-noescap>
+            <pre class="ampl"><code data-trim data-noescap>
 0.3::friend_brings_umbrella.
-umbrella :- umbrella_pos, umbrella_neg.
+umbrella:-umbrella_pos, not umbrella_neg.
 umbrella_pos :- remember, rain, not wind.
 umbrella_neg :- friend_brings_umbrella.
     </code></pre>
-            <span class=" fragment fade-out" data-fragment-index="1" style="font-size:0.6em"> $P(umbrella\,|\, remember,
+            <span class=" fragment fade-out" data-fragment-index="1" style="font-size:0.75em">
+                Without inhibition:
+                $P(umbrella\,|\, remember,
                 rain,
                 \lnot wind) = 1$
             </span>
-            <span class=" fragment current-visible" data-fragment-index="1" style="font-size:0.6em"> $P(umbrella\,|\,
+            <br>
+            <span class=" fragment current-visible" data-fragment-index="1" style="font-size:0.75em">
+                With inhibition:
+                $P(umbrella\,|\,
                 remember, rain,
                 \lnot wind) =
                 0.7$ </span>
         </div>
-        <div class="r-stack" style="width:90%">
+        <div class="r-stack" style="width:45%">
             <img class=" fragment fade-out" data-fragment-index="1" src="img/IE1.svg">
             <img class="fragment current-visible" data-fragment-index="1" src="img/IE2.svg">
         </div>

@@ -3,7 +3,7 @@
 <div style="display:flex; justify-content: center;">
     <div style="grid-area:code;">
         <pre class="ampl">
-    <code style="font-size:0.5em; width:fit-content" data-trim data-noescape  data-id="code-animation0">
+    <code style="font-size:0.6em; width:fit-content" data-trim data-noescape  data-id="code-animation0">
 0.4::rain.
 0.7::wind.
 umbrella :- rain, 
@@ -21,44 +21,68 @@ query(umbrella).
         <div style="visibility: hidden;font-size:0.5em;">
             $P(\mathit{scarf}) = 0.12+0.42+0.28=0.82$
         </div>
-        <div style="visibility: hidden;font-size:0.5em;">
+        <div style="visibility: hidden;font-size:0.6em;">
             <pre class="ampl">
                 <code data-trim data-noescape>
 evidence(scarf)
 query(rain)
-        </code></pre>
+</code></pre>
             $P(\mathit{rain}\,|\mathit{scarf}) = \frac{0.4}{0.82}=0.488$
         </div>
     </div>
 </div>
-<table>
-    <tr style="font-size:0.5em;">
-        <td style=" text-align: center; vertical-align: middle;font-size:0.8em">Possible world</td>
-        <td style=" text-align: center;vertical-align: bottom;">
-            <pre class="ampl">
-            <code data-trim data-noescape  data-id="code-animation1">
-
-            </code>
-            </pre>
+<table class="fragment" style="table-layout: fixed; width: 100%;">
+    <tr style="font-size:0.6em;">
+        <td style="width:15%;text-align: center; vertical-align: middle;font-size:0.8em" data-id="pw">Possible world
         </td>
-        <td style=" text-align: center;vertical-align: bottom;">
+        <td style="width:fit-content; text-align: center;vertical-align: bottom;">
             <pre class="ampl">
-    <code data-trim data-noescape  data-id="code-animation2">
-rain.
+            <code style="width:fit-content"  data-noescape data-trim data-id="code-animation1">
+<span style="visibility:hidden">rain.
+wind.
+umbrella :- rain, 
+            not wind. 
+scarf :- rain.
+scarf :- wind.
+query(umbrella).</span>
 </code>
 </pre>
         </td>
         <td style=" text-align: center;vertical-align: bottom;">
             <pre class="ampl">
-    <code  data-trim data-noescape  data-id="code-animation3">
+    <code style="width:fit-content" data-noescape  data-trim data-id="code-animation2">
+rain.
+<span style="visibility:hidden">wind.
+umbrella :- rain, 
+            not wind. 
+scarf :- rain.
+scarf :- wind.
+query(umbrella).</span>
+</code>
+</pre>
+        </td>
+        <td style="width:fit-content; text-align: center;vertical-align: bottom;">
+            <pre class="ampl">
+    <code style="width:fit-content" data-noescape data-trim  data-id="code-animation3">
+<span style="visibility:hidden">rain</span> 
 wind.
+<span style="visibility:hidden">umbrella :- rain, 
+            not wind. 
+scarf :- rain.
+scarf :- wind.
+query(umbrella).</span>
 </code></pre>
         </td>
-        <td style=" text-align: center;vertical-align: bottom;">
+        <td style="width:fit-content; text-align: center;vertical-align: bottom;">
             <pre class="ampl">
-    <code data-trim data-noescape  data-id="code-animation4">
+    <code style="width:fit-content" data-noescape data-trim data-id="code-animation4">
 rain.
 wind.
+<span style="visibility:hidden">umbrella :- rain, 
+            not wind.
+scarf :- rain.
+scarf :- wind.
+query(umbrella).</span>
 </code></pre>
         </td>
     </tr>

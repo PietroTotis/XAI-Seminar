@@ -1,10 +1,10 @@
 .example {
     border-radius: 25px;
     background-color: rgba(135, 192, 189, 0.7);
-    padding: 20px;
-    font-size: xx-large;
+    padding: 10px;
+    /* font-size: xx-large; */
     text-align: center;
-    margin: 10px;
+    margin: 5px;
 }
 
 .def {

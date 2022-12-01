@@ -23,9 +23,9 @@ umbrella :- remember, rain, not wind.
 0.3::friend_brings_umbrella.
 ¬umbrella :- friend_brings_umbrella.
 </code></pre>
-                <pre class="ampl"><code style="grid-area:right;width:fit-content" data-trim data-noescape>
+                <pre class="ampl"><code style="grid-area:right; width:fit-content" data-trim data-noescape>
 0.3::friend_brings_umbrella.
-umbrella :- umbrella_pos, umbrella_neg.
+umbrella:-umbrella_pos, not umbrella_neg.
 umbrella_pos :- remember, rain, not wind.
 umbrella_neg :- friend_brings_umbrella.
     </code></pre>
