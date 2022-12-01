@@ -15,10 +15,10 @@
 
 arg(X) :- bias(X).
 
-0.7::\+arg(hotel_Y) :- arg(hotel_X).
-0.4::\+arg(hotel_X) :- arg(hotel_Y).
-0.8::\+arg(hotel_Y) :- arg(noise).
-0.9::\+arg(hotel_X) :- arg(expensive).
+0.7::¬arg(hotel_Y) :- arg(hotel_X).
+0.4::¬arg(hotel_X) :- arg(hotel_Y).
+0.8::¬arg(hotel_Y) :- arg(noise).
+0.9::¬arg(hotel_X) :- arg(expensive).
 
                                             
                                            

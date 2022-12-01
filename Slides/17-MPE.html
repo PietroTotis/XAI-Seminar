@@ -5,14 +5,15 @@
     possible world compatible with the given evidence.
 </div>
 
-<div style="font-size:0.5em">
-    $MPE(arg(hotel\_X)): \omega = \{bias(quiet),\allowbreak \lnot bias(week),\allowbreak bias(hotel\_X),\allowbreak
-    \lnot
-    bias(anne),\allowbreak \lnot bias(noise),\allowbreak
-    bias(hotel\_Y),\allowbreak \lnot bias(exp), \allowbreak att_1,\allowbreak \lnot att_2, \allowbreak
-    att_3,\allowbreak att_4,\allowbreak att_5, att_6\}$
-</div>
 <div style="font-size:0.7em" class="fragment">
+    <div style="font-size:0.7em">
+        $MPE(evidence(arg(hotel\_X))): \omega = \{bias(quiet),\allowbreak \lnot bias(week),\allowbreak
+        bias(hotel\_X),\allowbreak
+        \lnot
+        bias(anne),\allowbreak \lnot bias(noise),\allowbreak
+        bias(hotel\_Y),\allowbreak \lnot bias(exp), \allowbreak att_1,\allowbreak \lnot att_2, \allowbreak
+        att_3,\allowbreak att_4,\allowbreak att_5, att_6\}$
+    </div>
 
     <div style="display:flex">
         <div style="font-size:0.68em;height:100%; padding-right:20px">
@@ -28,15 +29,15 @@
     
     arg(X) :- bias(X).
     
-    0.7::\+arg(hotel_Y) :- arg(hotel_X).
-    0.4::\+arg(hotel_X) :- arg(hotel_Y).
-    0.8::\+arg(hotel_Y) :- arg(noise).
-    0.9::\+arg(hotel_X) :- arg(expensive).
+    0.7::¬arg(hotel_Y) :- arg(hotel_X).
+    0.4::¬arg(hotel_X) :- arg(hotel_Y).
+    0.8::¬arg(hotel_Y) :- arg(noise).
+    0.9::¬arg(hotel_X) :- arg(expensive).
     
     0.5::arg(hotel_Y) :- arg(anne).
-    0.7::\+arg(noise) :- arg(week), arg(quiet). 
+    0.7::¬arg(noise) :- arg(week), arg(quiet). 
     
-    evidence(arg(hotel_Y)).
+    evidence(arg(hotel_X)).
     query(arg(X)).
         </code>
             </pre>

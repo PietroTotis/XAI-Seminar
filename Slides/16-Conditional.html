@@ -15,13 +15,13 @@
 
 arg(X) :- bias(X).
 
-0.7::\+arg(hotel_Y) :- arg(hotel_X).
-0.4::\+arg(hotel_X) :- arg(hotel_Y).
-0.8::\+arg(hotel_Y) :- arg(noise).
-0.9::\+arg(hotel_X) :- arg(expensive).
+0.7::¬arg(hotel_Y) :- arg(hotel_X).
+0.4::¬arg(hotel_X) :- arg(hotel_Y).
+0.8::¬arg(hotel_Y) :- arg(noise).
+0.9::¬arg(hotel_X) :- arg(expensive).
 
 0.5::arg(hotel_Y) :- arg(anne).
-0.7::\+arg(noise) :- arg(week), arg(quiet). 
+0.7::¬arg(noise) :- arg(week), arg(quiet).  
 
 evidence(arg(expensive), false).
 

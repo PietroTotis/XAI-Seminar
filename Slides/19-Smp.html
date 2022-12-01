@@ -1,0 +1,27 @@
+<h2>smproblog</h2>
+
+<div style="font-size:0.7em">
+    <div class="def" style="font-size:0.8em">
+        smProbLog is a PLP framework based on ProbLog2, whose semantics supports probabilistic logic programs where a
+        choice of probabilistic facts does not yield a unique interpretation of the logical atoms in the program.
+    </div>
+    <div style="display:flex">
+        <ul>
+            <li class="fragment">
+                Traditional PLP frameworks assume that each possible world yields <em>exactly one</em> valid
+                interpretation
+                of
+                the logical atoms.
+            </li>
+            <li class="fragment">
+                This means that there is no room for non-determinism other than probabilistic facts
+            </li>
+            <li class="fragment">
+                This is not the case when arguments form cyclic dependencies involving attacks.
+            </li>
+            <li class="fragment">
+                smProbLog uses <em>stable model semantics</em> in each possible world.
+            </li>
+        </ul>
+        <img src="img/neg_cycle.svg" </div>
+    </div>

@@ -1,0 +1,66 @@
+<h2>PLP tools: LFI</h2>
+
+<div style="font-size:0.65em">
+    <div class="def" style="font-size:0.99em" data-id="def">
+        The Learning From Interpretations (LFI) task estimates from a set of (partial)
+        interpretations
+        the unknown probabilities of a probabilistic logic program.
+    </div>
+    <ul data-id="list">
+        <li>A (partial) interpretation is an observation of (a subset of) the
+            truth values in one of
+            the possible
+            worlds.
+        </li>
+
+        <li>
+            The unknown probabilities are updated in an <em>expectation-maximization</em> iteration
+        </li>
+    </ul>
+</div>
+
+<div style="display:flex; justify-content: space-between; align-items:center;">
+    <div style="font-size:0.68em;height:100%;width:40%">
+        <pre class="ampl">
+            <code style="width:fit-content;" data-id="lfi" data-trim data-noescape>
+        0.6::bias(hotel_X).
+        0.8::bias(hotel_Y).
+        0.4::bias(expensive).
+        0.2::bias(noise).
+        
+        arg(X) :- bias(X).
+        
+        0.7::¬arg(hotel_Y) :- arg(hotel_X).
+        0.4::¬arg(hotel_X) :- arg(hotel_Y).
+        0.8::¬arg(hotel_Y) :- arg(noise).
+        0.9::¬arg(hotel_X) :- arg(expensive).
+
+        query(arg(X)).
+            </code>
+        </pre>
+    </div>
+    <div style="display:flex; flex-direction:column;font-size:0.6em; justify-content: space-between;">
+        <div>
+            <div data-id="exp">
+                Expectation
+            </div>
+            <img src="img/rarrow.svg" style="margin-top:-40%;margin-bottom:-40%">
+            $P(ev|\mathcal{L}(\mathbf{p})) $
+        </div>
+        <div>
+            <div>
+                Maximization
+            </div>
+            <img src="img/larrow.svg" style="margin-top:-40%;margin-bottom:-40%">
+            $p_i=\mathbb{E}[p_i\in \mathbf{p}|ev]$
+        </div>
+    </div>
+    <div style="font-size:0.68em;height:100%; width:33%">
+        <pre class="ampl">
+            <code style="width:fit-content;" data-id="lfii" data-trim data-noescape>
+                evidence(arg(hotel_X), true).
+                evidence(arg(expensive), true).
+            </code>
+        </pre>
+    </div>
+</div>
